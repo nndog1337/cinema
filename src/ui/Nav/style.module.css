@@ -1,13 +1,4 @@
 .list{
   display: flex;
   gap: 60px;
-  color: gray;
-
-  a{
-    transition: all 0.3s ease 0.1s;
-  }
-
-  & a:hover{
-    color:darkgrey;
-  }
 }

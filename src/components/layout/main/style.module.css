@@ -1,0 +1,13 @@
+.main{
+  margin-top: 0px;
+  margin-inline: auto;
+  max-width: 1800px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.sliderWrapper{
+  display: flex;
+  align-items: center;
+}

@@ -15,8 +15,8 @@ const ProfileModal = (Props) => {
       <div className={`${styles.modal} ${isModalOpen ? styles.active : ''}`}>
         <h2 className={styles.title}>Профиль</h2>
         <Input type={'text'} placeholder={'Введите имя'}/>
-        <Input type={'text'} placeholder={'Введите email'}/>
-        <Input type={'text'} placeholder={'Введите пароль'}/>
+        <Input type={'email'} placeholder={'Введите email'}/>
+        <Input type={'password'} placeholder={'Введите пароль'}/>
         <Button type={'submit'} text={'Войти'} />
       </div>
     </>
