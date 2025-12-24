@@ -1,0 +1,30 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 520px;
+  padding: 8px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.image{
+  width: 180px;
+  height: 270px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.title{
+  text-align: center;
+}
+
+.year{
+  font-size: 20px;
+}
+
+.card button:last-child{
+  margin-top: auto;
+  margin-bottom: 10px;
+}

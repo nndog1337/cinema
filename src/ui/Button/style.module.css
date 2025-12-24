@@ -2,11 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 30px;
+  padding-inline: 15px;
   background-color: #0d1117;
   color: gray;
   border: 1px solid gray;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.button.active{
+  background-color: gray;
+  color: black
 }
