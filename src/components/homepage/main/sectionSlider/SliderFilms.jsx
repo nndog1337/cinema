@@ -16,16 +16,15 @@ const SliderFilms = ({randomFilms}) => {
     return null
   }
 
+  
+
   return (
     <div className={styles.slider}>
       <h2>Recomendation</h2>
       <button className={styles.button} onClick={prevSlide}>⇧</button>
-      <div>
-        <Card key={randomFilms[currentIndex].imdbID}
-        title={randomFilms[currentIndex].Title} 
-        imgSrc={randomFilms[currentIndex].Poster} 
-        year={randomFilms[currentIndex].Year} />
-      </div>
+      <Card key={randomFilms[currentIndex].imdbID}
+      film={randomFilms[currentIndex]} 
+      />
       <button className={styles.button} onClick={nextSlide}>⇩</button>
     </div>
   )

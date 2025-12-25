@@ -64,10 +64,10 @@ if(error){
 }
 
   return (
-    <div className={styles.main}>
+    <main className={styles.main}>
       <div className={styles.sliderWrapper}><SliderFilms randomFilms={randomFilms}/></div>
       <Films films={films} isLoading={isLoading} error={error} totalPages={totalPages} handlePageClick={handlePageClick} currentPage={currentPage} />
-    </div>
+    </main>
   )
 }
 

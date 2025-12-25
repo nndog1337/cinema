@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router'
 import styles from './style.module.css'
 
 const Logo = (Props) => {
@@ -8,9 +9,9 @@ const Logo = (Props) => {
   } = Props
   return (
     <>
-      <a href={href}>
+      <NavLink to='/' end>
         <img className={styles.logo} src={src} alt={alt} />
-      </a>
+      </NavLink>
     </>
   )
 }

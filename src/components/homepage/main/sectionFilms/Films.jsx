@@ -14,7 +14,7 @@ const Films = (Props) => {
   <section className={styles.section}>
     <h1>Top Films</h1>
     <div className={styles.list}>
-      {films.map(film => <Card key={film.imdbID} title={film.Title} imgSrc={film.Poster} year={film.Year}/>)}
+      {films.map(film => <Card key={film.imdbID} film={film}/>)}
     </div>
     <Pagination totalPages={totalPages} handlePageClick={handlePageClick} currentPage={currentPage}/>
   </section>
