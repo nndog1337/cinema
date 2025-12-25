@@ -2,7 +2,6 @@ import Button from '../Button/Button'
 import styles from './style.module.css'
 
 const Pagination = (Props) => {
-  console.log('render')
   const{
     totalPages,
     handlePageClick,
