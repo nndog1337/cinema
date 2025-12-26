@@ -5,11 +5,16 @@ import { fetchFilmDetails } from '../../api/Api'
 
 const Card = (Props) => {
   const {
-    film
+    film,
+    isLoading
   } = Props
 
   if (!film || !film.imdbID) {
     return null; 
+  }
+
+  if(isLoading){
+    return <SkeletonFilms/>
   }
   return (
     <div className={styles.card}>

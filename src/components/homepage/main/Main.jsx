@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
-import Films from './sectionFilms/Films'
 import styles from './style.module.css'
-import SliderFilms from './sectionSlider/SliderFilms'
 import { fetchFilms } from '../../../api/Api'
 import { getRandomNumber } from '../../../utils/random'
+import Skeleton from '../../../ui/Skeleton/Skeleton'
+import FilmsWithPagination from './filmsWithPagination/FilmsWithPagination'
+import SliderWithSkeleton from './sliderWithSkeleton/SliderWithSkeleton'
 
 const Main = () => {
   const [films, setFilms] = useState([])
   const [randomFilms, setRandomFilms] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoadingSlider, setIsLoadingSlider] = useState(false)
+  const [isLoadingFilms, setIsLoadingFilms] = useState(false)
   const [error, setError] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = 10
@@ -19,16 +21,14 @@ const Main = () => {
   useEffect(() => {
     const filmsData = async() => {
       try{
-        setIsLoading(true)
-        const data = await fetchFilms(1)
+        setIsLoadingSlider(true)
         const randomData = await fetchFilms(randomPageRef.current)
         setRandomFilms(randomData || [])
-        setFilms(data || [])
       }catch(error){
         console.log(error.message)
         setError(error)
       }finally{
-        setIsLoading(false)
+        setIsLoadingSlider(false)
       }
     }
     filmsData()
@@ -37,14 +37,14 @@ const Main = () => {
   useEffect(() => {
     const filmsData = async() => {
       try{
-        setIsLoading(true)
+        setIsLoadingFilms(true)
         const data = await fetchFilms(currentPage)
         setFilms(data || [])
       }catch(error){
         console.log(error.message)
         setError(error)
       }finally{
-        setIsLoading(false)
+        setIsLoadingFilms(false)
       }
     }
     filmsData()
@@ -53,20 +53,33 @@ const Main = () => {
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
-  
 
-if(isLoading){
-  return <h2 style={{textAlign:'center', fontSize: '100px'}}>Loading...</h2>
-}
+  if(isLoadingSlider && !films.length) {
+    return <Skeleton 
+      totalPages={totalPages} 
+      handlePageClick={handlePageClick} 
+      currentPage={currentPage}
+    />
+  }
 
-if(error){
-  return <h2 style={{textAlign:'center', fontSize: '100px'}}>Films not Found...</h2>
-}
+  if(error){
+    return <h2 style={{textAlign:'center', fontSize: '100px'}}>Films not Found...</h2>
+  }
 
   return (
     <main className={styles.main}>
-      <div className={styles.sliderWrapper}><SliderFilms randomFilms={randomFilms}/></div>
-      <Films films={films} isLoading={isLoading} error={error} totalPages={totalPages} handlePageClick={handlePageClick} currentPage={currentPage} />
+      <SliderWithSkeleton
+        isLoadingSlider={isLoadingSlider}
+        randomFilms={randomFilms} 
+      />
+      <FilmsWithPagination 
+        films={films} 
+        totalPages={totalPages} 
+        handlePageClick={handlePageClick} 
+        currentPage={currentPage}
+        isLoadingFilms={isLoadingFilms}
+        
+      />
     </main>
   )
 }
