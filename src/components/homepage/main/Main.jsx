@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './style.module.css'
 import { fetchFilms } from '../../../api/Api'
-import { getRandomNumber } from '../../../utils/random'
 import Skeleton from '../../../ui/Skeleton/Skeleton'
 import FilmsWithPagination from './filmsWithPagination/FilmsWithPagination'
 import SliderWithSkeleton from './sliderWithSkeleton/SliderWithSkeleton'
+import { getRandomNumber } from '../../../utils/getRandomNumber'
 
 const Main = () => {
   const [films, setFilms] = useState([])
@@ -16,7 +16,6 @@ const Main = () => {
   const totalPages = 10
 
   const randomPageRef = useRef(getRandomNumber())
-
 
   useEffect(() => {
     const filmsData = async() => {

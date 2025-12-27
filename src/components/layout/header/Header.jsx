@@ -24,7 +24,6 @@ const Header = () => {
         <Logo src={logoImage} alt={'Логотип сайта'} href={'#'} />
         <div className={styles.links}>
           <Nav/>
-          <Input type={'text'} placeholder={'Введите название фильма'}/>
         </div>
         <Button text={'Профиль'} type={'button'} onClick={modalOpen}/>
       </div>
