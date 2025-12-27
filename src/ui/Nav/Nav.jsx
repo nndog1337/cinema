@@ -12,6 +12,10 @@ const Nav = () => {
           <NavLink to='/likes' end>
             Избранное
           </NavLink>
+
+          <NavLink to='/search' end>
+            Поиск
+          </NavLink>
         </nav>
       </>
   )
