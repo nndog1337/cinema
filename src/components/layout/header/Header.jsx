@@ -4,7 +4,6 @@ import Button from '../../../ui/Button/Button'
 import Nav from '../../../ui/Nav/Nav'
 import Logo from '../../../ui/Logo/Logo'
 import logoImage from "/public/social-share-tw.jpg"
-import Input from '../../../ui/Input/Input'
 import ProfileModal from './profileModal/ProfileModal'
 
 const Header = () => {

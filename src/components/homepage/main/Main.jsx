@@ -62,7 +62,7 @@ const Main = () => {
   }
 
   if(error){
-    return <h2 style={{textAlign:'center', fontSize: '100px'}}>Films not Found...</h2>
+    return <h2 style={{textAlign:'center', fontSize: '100px'}}>Фильмы не найдены...</h2>
   }
 
   return (
