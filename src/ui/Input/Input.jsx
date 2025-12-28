@@ -4,10 +4,13 @@ const Input = (Props) => {
   const{
     type,
     placeholder,
+    value,
+    onChange,
+    ref
   } = Props
   return (
     <>
-      <input className={styles.input} type={type} placeholder={placeholder}/>
+      <input className={styles.input} type={type} placeholder={placeholder} value={value} onChange={onChange} ref={ref}/>
     </>
   )
 }

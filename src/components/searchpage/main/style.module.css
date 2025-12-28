@@ -1,0 +1,25 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 1600px;
+  margin-inline: auto;
+  align-items: center;
+
+  input{
+    width: 400px;
+    font-size: 20px;
+    padding-inline: 90px;
+    &::placeholder{
+      font-size: 20px;
+    }
+  }
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
