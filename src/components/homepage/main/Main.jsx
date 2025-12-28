@@ -13,6 +13,7 @@ const Main = () => {
   const [isLoadingFilms, setIsLoadingFilms] = useState(false)
   const [error, setError] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
+  
   const totalPages = 10
 
   const randomPageRef = useRef(getRandomNumber())
@@ -77,7 +78,6 @@ const Main = () => {
         handlePageClick={handlePageClick} 
         currentPage={currentPage}
         isLoadingFilms={isLoadingFilms}
-        
       />
     </main>
   )
