@@ -3,8 +3,8 @@ import styles from './style.module.css'
 import Button from '../../../ui/Button/Button'
 import Nav from '../../../ui/Nav/Nav'
 import Logo from '../../../ui/Logo/Logo'
-import logoImage from "/public/social-share-tw.jpg"
 import ProfileModal from './profileModal/ProfileModal'
+import Theme from '../../../ui/Theme/Theme'
 
 const Header = () => {
 
@@ -20,11 +20,14 @@ const Header = () => {
   return (
     <>
       <div className={styles.header}>
-        <Logo src={logoImage} alt={'Логотип сайта'} href={'#'} />
+        <Logo/>
         <div className={styles.links}>
           <Nav/>
         </div>
-        <Button text={'Профиль'} type={'button'} onClick={modalOpen}/>
+        <div className={styles.buttonsWrapper}>
+          <Theme/>
+          <Button text={'Профиль'} type={'button'} onClick={modalOpen}/>
+        </div>
       </div>
       {isModalOpen && <ProfileModal isModalOpen={isModalOpen} modalClose={modalClose}/>}
     </>

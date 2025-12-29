@@ -6,15 +6,18 @@ import Film from './pages/Film';
 import Likes from './pages/Likes';
 import Header from './components/layout/header/Header';
 import Search from './pages/Search';
+import ThemeProvider from './Provider/ThemeProvider';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <Header/>
-    <Routes>
-      <Route path='/' element={<HomePage/>}/>
-      <Route path='/film/:id' element={<Film/>}/>
-      <Route path='/likes' element={<Likes/>}/>
-      <Route path='/search' element={<Search/>}/>
-    </Routes>
+    <ThemeProvider>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/film/:id' element={<Film/>}/>
+        <Route path='/likes' element={<Likes/>}/>
+        <Route path='/search' element={<Search/>}/>
+      </Routes>
+    </ThemeProvider>
   </BrowserRouter>
 )

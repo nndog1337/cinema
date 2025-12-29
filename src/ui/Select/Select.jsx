@@ -8,7 +8,7 @@ const Select = (Props) => {
   } = Props
   return (
     <select className={styles.select} name="" id="rating" value={sortBy} onChange={onChange}>
-      <option value="" disabled>Сортировка</option>
+      <option value="sort">Сортировка</option>
       <option value="yearNew">Год по убыванию</option>
       <option value="yearOld">Год по возврастанию</option>
     </select>

@@ -1,6 +1,6 @@
 .select{
   background-color: inherit;
-  color: gray;
+  color: var(--light);
   border-radius: 8px;
   width: 150px;
   height: 30px;
@@ -8,8 +8,8 @@
   margin-bottom: 20px;
 
   option{
-    background-color: #0d1117;
+    background-color: var(--dark);
     border-radius: 8px;
-    color: gray;
+    color: --light;
   }
 }
