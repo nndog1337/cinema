@@ -14,10 +14,10 @@ const FilmsWithPagination = (Props) => {
     isLoadingFilms,
   } = Props
 
-  const [sortBy, setSortBy] = useState('')
+  const [sortBy, setSortBy] = useState('sort')
 
   const sortedFilms = useMemo(() => {
-    if (!sortBy) return films
+    if (sortBy === 'sort') return films
   
     const filmsCopy = [...films]
     if(sortBy === 'yearNew'){

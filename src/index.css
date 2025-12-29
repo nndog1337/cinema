@@ -1,7 +1,16 @@
 body{
+  --dark: #0d1117;
+  --light: #e0e0e0;
   padding-inline: 16px;
-  background-color: #0d1117;
-  color: gray;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+body.light{
+  --dark: #e0e0e0;
+  --light: #0d1117;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 li{
